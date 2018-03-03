@@ -1,0 +1,12 @@
+enable-migrations -ContextTypeName RepositoryNAuthenticaiton.DAL.ApplicationDbContext -migrationsDirectory Migrations\ApplicaitonDBContext
+Enable-Migrations -ContextTypeName RepositoryNAuthenticaiton.DAL.SchoolContext -migrationsDirectory Migrations\SchoolContext
+
+add-migration -ConfigurationTypeName RepositoryNAuthenticaiton.Migrations.ApplicaitonDBContext.Configuration "InitialCreate"
+add-migration -ConfigurationTypeName RepositoryNAuthenticaiton.Migrations.SchoolContext.Configuration "InitialCreate"
+
+update-database -ConfigurationTypeName RepositoryNAuthenticaiton.Migrations.ApplicaitonDBContext.Configuration
+update-database -ConfigurationTypeName RepositoryNAuthenticaiton.Migrations.SchoolContext.Configuration
+
+For modification of tables
+add-migration -ConfigurationTypeName RepositoryNAuthenticaiton.Migrations.SchoolContext.Configuration "FullDB"
+
